@@ -11,6 +11,7 @@ export default function Landing() {
 
   return (
     <div style={{ maxWidth: 960, margin: '0 auto', padding: '60px 24px' }}>
+      <img src="/kfai/logo.png" alt="Kenan-Flagler Business School" style={{ height: 48, marginBottom: 16 }} />
       <h1 style={{ fontSize: 36, marginBottom: 8 }}>Kenan-Flagler Future of Work Survey</h1>
       <p style={{ color: 'var(--muted)', fontSize: 16, marginBottom: 48, maxWidth: 600 }}>
         Researching how AI is reshaping what employers look for and how work gets done.

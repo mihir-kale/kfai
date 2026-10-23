@@ -48,7 +48,7 @@ export default function AuthGate({ children }: { children: React.ReactNode }) {
     return (
       <div className="gate">
         <div className="gate-card">
-          <div className="gate-mark">KF</div>
+          <img src="/kfai/logo.png" alt="Kenan-Flagler" style={{ height: 40, marginBottom: 16 }} />
           <h1>Supabase not configured</h1>
           <p>
             Set <code>VITE_SUPABASE_URL</code> and <code>VITE_SUPABASE_ANON_KEY</code> in your
@@ -66,7 +66,7 @@ export default function AuthGate({ children }: { children: React.ReactNode }) {
     return (
       <div className="gate">
         <div className="gate-card">
-          <div className="gate-mark">KF</div>
+          <img src="/kfai/logo.png" alt="Kenan-Flagler" style={{ height: 40, marginBottom: 16 }} />
           <h1>Loading...</h1>
         </div>
       </div>
@@ -77,7 +77,7 @@ export default function AuthGate({ children }: { children: React.ReactNode }) {
     return (
       <div className="gate">
         <div className="gate-card">
-          <div className="gate-mark">KF</div>
+          <img src="/kfai/logo.png" alt="Kenan-Flagler" style={{ height: 40, marginBottom: 16 }} />
           <h1>Team Portal</h1>
           <p>Sign in with your credentials.</p>
 
