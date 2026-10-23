@@ -16,9 +16,6 @@ export default function Landing() {
         <h1 style={{ color: '#fff', fontSize: 22, margin: 0, fontWeight: 600 }}>Future of Work Survey</h1>
       </header>
       <div style={{ maxWidth: 960, margin: '0 auto', padding: '60px 24px' }}>
-      <p style={{ color: 'var(--muted)', fontSize: 16, marginBottom: 48, maxWidth: 600 }}>
-        Researching how AI is reshaping what employers look for and how work gets done.
-      </p>
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
         <div
