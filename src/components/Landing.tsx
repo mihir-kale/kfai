@@ -33,8 +33,7 @@ export default function Landing() {
         >
           <h2 style={{ marginTop: 0 }}>Take the survey</h2>
           <p style={{ color: 'var(--muted)', fontSize: 14, lineHeight: 1.6 }}>
-            Short on time? Answer a few questions about how AI has changed hiring and day-to-day
-            work in your function. Takes about 5 minutes.
+            Click here to fill out the survey
           </p>
           <button className="btn primary" style={{ marginTop: 12 }}>Start survey →</button>
         </div>
