@@ -10,9 +10,12 @@ export default function Landing() {
   if (view === 'app') return <AuthGate><App /></AuthGate>
 
   return (
-    <div style={{ maxWidth: 960, margin: '0 auto', padding: '60px 24px' }}>
-      <img src="/kfai/logo.png" alt="Kenan-Flagler Business School" style={{ height: 48, marginBottom: 16 }} />
-      <h1 style={{ fontSize: 36, marginBottom: 8 }}>Kenan-Flagler Future of Work Survey</h1>
+    <>
+      <header style={{ background: '#4B9CD3', padding: '16px 24px', display: 'flex', alignItems: 'center', gap: 16 }}>
+        <img src="/kfai/logo.png" alt="Kenan-Flagler Business School" style={{ height: 40 }} />
+        <h1 style={{ color: '#fff', fontSize: 22, margin: 0, fontWeight: 600 }}>Future of Work Survey</h1>
+      </header>
+      <div style={{ maxWidth: 960, margin: '0 auto', padding: '60px 24px' }}>
       <p style={{ color: 'var(--muted)', fontSize: 16, marginBottom: 48, maxWidth: 600 }}>
         Researching how AI is reshaping what employers look for and how work gets done.
       </p>
@@ -55,5 +58,6 @@ export default function Landing() {
         </div>
       </div>
     </div>
+    </>
   )
 }
