@@ -79,7 +79,6 @@ export default function AuthGate({ children }: { children: React.ReactNode }) {
         <div className="gate-card">
           <img src="/kfai/logo.png" alt="Kenan-Flagler" style={{ height: 40, marginBottom: 16 }} />
           <h1>Team Portal</h1>
-          <p>Sign in with your credentials.</p>
 
           <form onSubmit={signIn}>
             <label htmlFor="email">Email</label>
