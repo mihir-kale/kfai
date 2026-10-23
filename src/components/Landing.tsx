@@ -11,13 +11,16 @@ export default function Landing() {
 
   return (
     <>
-      <header style={{ background: '#4B9CD3', padding: '16px 24px', display: 'flex', alignItems: 'center', gap: 16 }}>
-        <img src="/kfai/logo.png" alt="Kenan-Flagler Business School" style={{ height: 40 }} />
-        <h1 style={{ color: '#fff', fontSize: 22, margin: 0, fontWeight: 600 }}>Future of Work Survey</h1>
+      <header style={{ background: '#4B9CD3', padding: '16px 24px', display: 'flex', alignItems: 'center', gap: 16, justifyContent: 'space-between' }}>
+        <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
+          <img src="/kfai/logo.png" alt="Kenan-Flagler Business School" style={{ height: 40 }} />
+          <h1 style={{ color: '#fff', fontSize: 22, margin: 0, fontWeight: 600 }}>Future of Work Survey</h1>
+        </div>
+        <button onClick={() => setView('app')} style={{ background: 'transparent', border: '1px solid #fff', color: '#fff', padding: '8px 16px', borderRadius: 6, cursor: 'pointer', fontSize: 14, fontWeight: 500 }}>Team Member Login</button>
       </header>
       <div style={{ maxWidth: 960, margin: '0 auto', padding: '60px 24px' }}>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: 24 }}>
         <div
           onClick={() => setView('survey')}
           style={{
