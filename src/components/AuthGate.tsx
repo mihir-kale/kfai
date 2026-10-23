@@ -44,10 +44,6 @@ export default function AuthGate({ children }: { children: React.ReactNode }) {
     setSigningIn(false)
   }
 
-  const signOut = async () => {
-    await supabase.auth.signOut()
-  }
-
   if (!isSupabaseConfigured) {
     return (
       <div className="gate">
@@ -122,22 +118,5 @@ export default function AuthGate({ children }: { children: React.ReactNode }) {
     )
   }
 
-  return (
-    <>
-      <div
-        style={{
-          position: 'fixed',
-          top: 8,
-          right: 12,
-          zIndex: 100,
-          fontSize: 11,
-        }}
-      >
-        <button className="btn subtle" onClick={signOut} style={{ padding: '3px 8px' }}>
-          Sign out
-        </button>
-      </div>
-      {children}
-    </>
-  )
+  return <>{children}</>
 }

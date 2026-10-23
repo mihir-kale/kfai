@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { supabase } from './lib/supabase'
 import type { Alum, EncryptedPayload, OutreachStatus, Sender } from './lib/types'
 import { loadPayload, unlockDataset } from './lib/crypto'
 import {
@@ -371,6 +372,9 @@ export default function App() {
           </span>
         </div>
 
+        <button className="ghost-btn" onClick={() => supabase.auth.signOut()}>
+          Sign out
+        </button>
         <button className="ghost-btn" onClick={() => setGuideOpen(true)}>
           Interview guide
         </button>
