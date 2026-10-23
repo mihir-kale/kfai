@@ -1,0 +1,15 @@
+export const REALM_TINT: Record<string, { bg: string; fg: string }> = {
+  ib: { bg: '#e0edf9', fg: '#1e4d78' },
+  consulting: { bg: '#e8e7fb', fg: '#4038a0' },
+  sales: { bg: '#fdeee0', fg: '#9a4a12' },
+  asset: { bg: '#e2f3ea', fg: '#1f6b45' },
+  pe: { bg: '#f3e6fa', fg: '#6b2c8f' },
+  corpfin: { bg: '#e6f0f7', fg: '#245b7a' },
+  accounting: { bg: '#eef0e2', fg: '#5a6320' },
+  marketing: { bg: '#fbe7ef', fg: '#9c2b53' },
+  product: { bg: '#e4f1f6', fg: '#1f6076' },
+  ops: { bg: '#eef1f4', fg: '#44546a' },
+  realestate: { bg: '#f7efe3', fg: '#7a5320' },
+  healthcare: { bg: '#e6f4f1', fg: '#1e6b5e' },
+  other: { bg: '#f1f5f9', fg: '#526273' },
+}
