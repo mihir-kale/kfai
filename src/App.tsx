@@ -17,11 +17,8 @@ import AlumniTable from './components/AlumniTable'
 import type { Sort, SortKey } from './components/AlumniTable'
 import DraftPanel from './components/DraftPanel'
 import GuidePanel from './components/GuidePanel'
-import UnlockGate from './components/UnlockGate'
 
 const PAGE_SIZE = 60
-const PASS_KEY = 'ubp-outreach:v1:session'
-
 const EMPTY_FACETS: Facets = {
   years: [],
   industries: [],
@@ -30,28 +27,11 @@ const EMPTY_FACETS: Facets = {
   statuses: [],
 }
 
-function readSessionPass(): string | null {
-  try {
-    return sessionStorage.getItem(PASS_KEY)
-  } catch {
-    return null
-  }
-}
-
-function writeSessionPass(pass: string) {
-  try {
-    sessionStorage.setItem(PASS_KEY, pass)
-  } catch {
-    /* ignore */
-  }
-}
-
 export default function App() {
   const [payloadState, setPayloadState] = useState<'loading' | 'ready' | 'missing'>('loading')
   const [payload, setPayload] = useState<EncryptedPayload | null>(null)
   const [records, setRecords] = useState<Alum[] | null>(null)
-  const [busy, setBusy] = useState(false)
-  const [error, setError] = useState<string | null>(null)
+  const [datasetError, setDatasetError] = useState<string | null>(null)
 
   const [sender, setSender] = useState<Sender>(() => loadSender())
   const [statuses, setStatuses] = useState<StatusMap>(() => loadStatuses())
@@ -80,35 +60,16 @@ export default function App() {
       }
       setPayload(p)
       setPayloadState('ready')
-      const cached = readSessionPass()
-      if (cached) {
-        const res = await unlockDataset(p, cached)
-        if (!cancelled && res.ok) setRecords(res.records)
+      const res = await unlockDataset(p, 'ubp2026')
+      if (!cancelled) {
+        if (res.ok) setRecords(res.records)
+        else setDatasetError(res.error)
       }
     })
     return () => {
       cancelled = true
     }
   }, [])
-
-  const attemptUnlock = useCallback(
-    async (passphrase: string) => {
-      if (!payload) return
-      setBusy(true)
-      setError(null)
-      const res = await unlockDataset(payload, passphrase)
-      setBusy(false)
-      if (res.ok) {
-        setRecords(res.records)
-        writeSessionPass(passphrase)
-      } else {
-        console.log('SET_ERROR_CALLED', res.error)
-        setError(res.error)
-        setBusy(false)
-      }
-    },
-    [payload],
-  )
 
   /* ---------------------------------------------------------------- */
   /* Persistence                                                       */
@@ -351,14 +312,27 @@ export default function App() {
     )
   }
 
+  if (!records && datasetError) {
+    return (
+      <div className="gate">
+        <div className="gate-card">
+          <div className="gate-mark">UBP</div>
+          <h1>Dataset error</h1>
+          <p>{datasetError}</p>
+        </div>
+      </div>
+    )
+  }
+
   if (!records) {
     return (
-      <UnlockGate
-        payload={payload}
-        error={error}
-        busy={busy}
-        onUnlock={attemptUnlock}
-      />
+      <div className="gate">
+        <div className="gate-card">
+          <div className="gate-mark">UBP</div>
+          <h1>Loading dataset…</h1>
+          <p>Decrypting alumni records.</p>
+        </div>
+      </div>
     )
   }
 
