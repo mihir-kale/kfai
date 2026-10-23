@@ -114,7 +114,7 @@ export default function Survey() {
 
   return (
     <div style={{ maxWidth: 720, margin: '0 auto', padding: '40px 20px' }}>
-      <h1>Workstream B — Employer &amp; Industry Shift</h1>
+      <h1>Kenan-Flagler Future of Work Survey</h1>
       <p style={{ color: 'var(--muted)', marginBottom: 32 }}>
         Research survey: how AI is reshaping what employers look for and how work gets done.
         Your responses help inform UNC Kenan-Flagler's curriculum.

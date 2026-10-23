@@ -11,10 +11,9 @@ export default function Landing() {
 
   return (
     <div style={{ maxWidth: 960, margin: '0 auto', padding: '60px 24px' }}>
-      <h1 style={{ fontSize: 36, marginBottom: 8 }}>UBP Alumni Outreach</h1>
+      <h1 style={{ fontSize: 36, marginBottom: 8 }}>Kenan-Flagler Future of Work Survey</h1>
       <p style={{ color: 'var(--muted)', fontSize: 16, marginBottom: 48, maxWidth: 600 }}>
-        Workstream B — Employer &amp; Industry Shift. Researching how AI is reshaping what
-        employers look for and how work gets done.
+        Researching how AI is reshaping what employers look for and how work gets done.
       </p>
 
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 24 }}>

@@ -48,7 +48,7 @@ export default function AuthGate({ children }: { children: React.ReactNode }) {
     return (
       <div className="gate">
         <div className="gate-card">
-          <div className="gate-mark">UBP</div>
+          <div className="gate-mark">KF</div>
           <h1>Supabase not configured</h1>
           <p>
             Set <code>VITE_SUPABASE_URL</code> and <code>VITE_SUPABASE_ANON_KEY</code> in your
@@ -66,7 +66,7 @@ export default function AuthGate({ children }: { children: React.ReactNode }) {
     return (
       <div className="gate">
         <div className="gate-card">
-          <div className="gate-mark">UBP</div>
+          <div className="gate-mark">KF</div>
           <h1>Loading...</h1>
         </div>
       </div>
@@ -77,9 +77,9 @@ export default function AuthGate({ children }: { children: React.ReactNode }) {
     return (
       <div className="gate">
         <div className="gate-card">
-          <div className="gate-mark">UBP</div>
-          <h1>UBP Alumni Outreach</h1>
-          <p>Workstream B — Employer &amp; Industry Shift. Sign in with your team credentials.</p>
+          <div className="gate-mark">KF</div>
+          <h1>Team Portal</h1>
+          <p>Sign in with your credentials.</p>
 
           <form onSubmit={signIn}>
             <label htmlFor="email">Email</label>
@@ -110,9 +110,7 @@ export default function AuthGate({ children }: { children: React.ReactNode }) {
 
           {error && <div className="gate-error">{error}</div>}
 
-          <div className="gate-foot">
-            Only authorized team members can access this tool.
-          </div>
+
         </div>
       </div>
     )
